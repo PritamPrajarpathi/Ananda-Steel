@@ -4,7 +4,7 @@
     // Helpers
     const $ = (sel, ctx = document) => ctx.querySelector(sel);
     const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
-    const debounce = (fn, wait = 50) => {
+    const debounce = (fn, wait = 20) => {
         let t;
         return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
     };
@@ -180,7 +180,7 @@
         const elements = $$(animateSelector);
         elements.forEach((el, idx) => {
             el.classList.add('reveal');
-            el.style.setProperty('--delay', `${idx * 60}ms`);
+            el.style.setProperty('--delay', `${idx * 20}ms`);
             if (el.matches('.service-card')) el.dataset.animate = 'pop';
             io.observe(el);
         });
