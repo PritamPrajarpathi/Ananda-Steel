@@ -20,11 +20,15 @@ body {
 }
 
 /* Make sizing include padding/border to avoid unexpected overflow */
-*,
+
 *::before,
 *::after {
     box-sizing: border-box;
 }
+.custom-logo{
+    height: auto;
+}
+
 
 /* Logo / brand */
 .logo h2 {
